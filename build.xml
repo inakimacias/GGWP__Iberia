@@ -7,7 +7,7 @@
 	<property name="dist.dir" location="dist"/>
 	<property name="resources.dir" location="resources"/>
 	
-	<property name="server.port" value="8005"/>
+	<property name="server.port" value="8003"/> <!--8003-->
 	
 	<path id="classpath">
 	        <fileset dir="${lib.dir}">
@@ -24,7 +24,7 @@
     </target>
 	
 	
-	<target name="RUN IBERIA SERVER" description="Runs the Facebook Server">
+	<target name="RUN IBERIA SERVER" description="Runs the Iberia Server">
 		<java classname="remote.TCPSocketServer" classpathref="classpath" fork="true">
 	 		<arg value="${server.port}"/> 
         </java>
