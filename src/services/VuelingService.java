@@ -28,16 +28,16 @@ public class VuelingService {
 	}
 	
 	
-	public String reservarVuelo(String v, int p){
+	public synchronized String reservarVuelo(String id, int p){
 		System.out.println(" - ValidationService - Attempting to book flight");
 		List<Vuelo> vuelos = new ArrayList<>();
 		vuelos = DataAccessObject.getInstance().getListaVuelos();
 		int i = 0;		
-		while(!(vuelos.get(i).getId_vuelo().equals(v))){
+		while(!(vuelos.get(i).getId_vuelo().equals(id))){
 			i++;
 		}
 		vuelos.get(i).setPlazas(vuelos.get(i).getPlazas()-p);
 		DataAccessObject.getInstance().setListaVuelos(vuelos);
-		return "Vuelo "+v+" reservado con exito";
+		return "Vuelo "+id+" reservado con exito";
 	}
 }
