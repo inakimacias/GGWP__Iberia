@@ -11,7 +11,7 @@ import data.Vuelo;
 public class DataAccessObject {
 	private static Logger LOGGER;
 	private static DataAccessObject instance = new DataAccessObject();
-	private List<Vuelo> listaVuelos = new ArrayList<>();
+	private List<Vuelo> listaVuelos = new ArrayList<Vuelo>();
 	
 	public DataAccessObject() {
 		BasicConfigurator.configure();
